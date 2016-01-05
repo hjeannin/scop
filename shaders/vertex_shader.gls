@@ -1,0 +1,18 @@
+#version 410
+
+uniform mat4 proj_matrix, view_matrix, trans_matrix, rot_y_matrix, scale_matrix;
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec3 in_vertex_color;
+
+out vec2 vertex_tex_coord;
+
+void		main()
+{
+	vertex_tex_coord = vec2(position.x + position.z, position.x + position.y);
+	gl_Position = proj_matrix
+				  * view_matrix
+				  * trans_matrix
+				  * rot_y_matrix
+				  * scale_matrix
+				  * vec4(position, 1.0);
+}

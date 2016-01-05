@@ -1,0 +1,19 @@
+#version 410
+
+uniform sampler2D	tex;
+uniform float		tex_tog;
+uniform float		color;
+
+in vec3				geometry_color;
+in vec2				geometry_tex_coord;
+out vec4			out_fragment;
+
+void main()
+{
+	out_fragment = (tex_tog * texture(tex, geometry_tex_coord)) + ((1.0f - tex_tog)
+				 * vec4(
+				 geometry_color.x,
+				 geometry_color.y,
+				 geometry_color.z
+				 , 1.0));
+}
