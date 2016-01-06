@@ -5,6 +5,7 @@ layout(triangle_strip, max_vertices = 3) out;
 uniform float		color;
 
 in vec2 vertex_tex_coord[];
+in vec3 out_vertex_color[];
 
 out vec3 geometry_color;
 out vec2 geometry_tex_coord;
@@ -15,9 +16,13 @@ void main()
 
 	if (color == 1.0f)
 	{
-	grey = gl_in[0].gl_Position.x + 
-		   gl_in[1].gl_Position.y +
-		   gl_in[2].gl_Position.z +
+		geometry_color = vec3(out_vertex_color[0].x, out_vertex_color[0].y, out_vertex_color[0].z);
+	}
+	else
+	{
+	grey = out_vertex_color[0].x + gl_in[0].gl_Position.x + 
+		   out_vertex_color[0].y + gl_in[1].gl_Position.y +
+		   out_vertex_color[0].z + gl_in[2].gl_Position.z +
 		   gl_in[1].gl_Position.x -
 		   gl_in[2].gl_Position.y -
 		   gl_in[0].gl_Position.z -
@@ -30,8 +35,8 @@ void main()
 	   grey = grey + 0.7;
 	if (grey <= 0.1)
 	   grey = 0.1;
-	}
 	geometry_color = vec3(grey, grey, grey);
+	}
 
 	geometry_tex_coord = vertex_tex_coord[0];
 	gl_Position = gl_in[0].gl_Position;

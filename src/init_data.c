@@ -6,7 +6,7 @@
 /*   By: hjeannin <hjeannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 17:03:58 by hjeannin          #+#    #+#             */
-/*   Updated: 2015/12/17 19:09:37 by hjeannin         ###   ########.fr       */
+/*   Updated: 2016/01/06 16:55:52 by hjeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int				init_data(t_data *d)
 	d->obj_file = NULL;
 	d->texture_file = NULL;
 	d->parsing_mode = NO_SLASH;
-	d->color = 0.4f;
+	d->color = 0.0f;
 	d->texture_id = 0;
 	d->bmp_data = NULL;
 	d->translate[0] = 0.0f;
