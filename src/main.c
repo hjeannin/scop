@@ -6,7 +6,7 @@
 /*   By: hjeannin <hjeannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/11 13:55:52 by hjeannin          #+#    #+#             */
-/*   Updated: 2016/01/05 19:52:34 by hjeannin         ###   ########.fr       */
+/*   Updated: 2016/01/06 16:51:40 by hjeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static int		key_events(int key, t_data *d)
 		d->auto_rot_y += 0.01;
 	if (key == K_T)
 		d->texture_toggle_status = (d->texture_toggle_status == 0) ? 1 : 0;
+	if (key == K_P)
+		d->color = (d->color == 0.0f) ? 1.0f : 0.0f;
 	return (1);
 }
 

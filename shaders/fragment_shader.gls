@@ -2,7 +2,6 @@
 
 uniform sampler2D	tex;
 uniform float		tex_tog;
-uniform float		color;
 
 in vec3				geometry_color;
 in vec2				geometry_tex_coord;

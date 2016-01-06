@@ -6,7 +6,7 @@
 /*   By: hjeannin <hjeannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/11 13:58:05 by hjeannin          #+#    #+#             */
-/*   Updated: 2015/12/18 14:16:09 by hjeannin         ###   ########.fr       */
+/*   Updated: 2016/01/06 16:49:52 by hjeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define K_W			13
 # define K_S			1
 # define K_T			17
+# define K_P			35
 # define K_PLUS			24
 # define K_MOINS		27
 
