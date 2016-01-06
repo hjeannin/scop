@@ -15,10 +15,8 @@ void main()
 
 	if (color == 1.0f)
 	{
-		geometry_color = vec3(
-		gl_in[0].gl_Position.z,
-		gl_in[1].gl_Position.z,
-		gl_in[2].gl_Position.z);
+		grey = 0.07 * (gl_in[0].gl_Position.z - gl_in[0].gl_ClipDistance[0]);
+		geometry_color = vec3(grey, grey, grey);
 	}
 	else
 	{
