@@ -6,7 +6,7 @@
 /*   By: hjeannin <hjeannin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/11 13:55:52 by hjeannin          #+#    #+#             */
-/*   Updated: 2016/01/06 16:51:40 by hjeannin         ###   ########.fr       */
+/*   Updated: 2016/01/13 18:06:30 by hjeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ static int		key_events(int key, t_data *d)
 		d->texture_toggle_status = (d->texture_toggle_status == 0) ? 1 : 0;
 	if (key == K_P)
 		switch_color_mode(d);
-	dprintf(2, "color = %f\n", d->color);
 	return (1);
 }
 
