@@ -54,7 +54,10 @@ static int		key_events(int key, t_data *d)
 	if (key == K_T)
 		d->texture_toggle_status = (d->texture_toggle_status == 0) ? 1 : 0;
 	if (key == K_P)
-		d->color = (d->color == 0.0f) ? 1.0f : 0.0f;
+	{
+		d->color = (d->color == 0.0f) ? 1.0f : (d->color == 1.0f) ? 2.0f : 0.0f;
+	}
+	dprintf(2, "color = %f\n", d->color);
 	return (1);
 }
 
