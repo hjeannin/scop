@@ -16,8 +16,18 @@ void main()
 	if (color == 0.0f)
 	{
 		grey = gl_in[0].gl_Position.z - gl_in[1].gl_Position.z + 0.1 * gl_in[2].gl_Position.z;
-
-		geometry_color = vec3(grey, grey, grey);
+		if (grey <= 0.01)
+			geometry_color = vec3(0.01f, 0.01f, 0.01f);
+		else	
+			geometry_color = vec3(grey, grey, grey);
+	}
+	else if (color == 3.0f)
+	{
+		grey = gl_in[0].gl_Position.z - gl_in[1].gl_Position.z + 0.1 * gl_in[2].gl_Position.z;
+		if (grey <= 0.01)
+			geometry_color = vec3(0.96f, 0.02f, 0.3f);
+		else	
+			geometry_color = vec3(grey, grey, grey);
 	}
 	else if (color == 1.0f)
 	{

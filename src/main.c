@@ -34,6 +34,31 @@ static int		translation_key_events(int key, t_data *d)
 	return (1);
 }
 
+static int		switch_color_mode(t_data *d)
+{
+	if (d->color == 0.0f)
+	{
+		d->color = 1.0f;
+		return (1);
+	}
+	else if (d->color == 1.0f)
+	{
+		d->color = 2.0f;
+		return (1);
+	}
+	else if (d->color == 2.0f)
+	{
+		d->color = 3.0f;
+		return (1);
+	}
+	else if (d->color == 3.0f)
+	{
+		d->color = 0.0f;
+		return (1);
+	}
+	return (0);
+}
+
 static int		key_events(int key, t_data *d)
 {
 	if (key == K_ESC)
@@ -54,9 +79,7 @@ static int		key_events(int key, t_data *d)
 	if (key == K_T)
 		d->texture_toggle_status = (d->texture_toggle_status == 0) ? 1 : 0;
 	if (key == K_P)
-	{
-		d->color = (d->color == 0.0f) ? 1.0f : (d->color == 1.0f) ? 2.0f : 0.0f;
-	}
+		switch_color_mode(d);
 	dprintf(2, "color = %f\n", d->color);
 	return (1);
 }
